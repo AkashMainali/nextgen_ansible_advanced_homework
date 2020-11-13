@@ -1,0 +1,10 @@
+OSP_GUID=27ae
+OPENTLC_ID=akash.mainali-axcelinno.io
+OSP_DOMAIN=blue.osp.opentlc.com
+TOWER_GUID=a246
+OPENTLC_PASSWORD=Deathmagnet1!
+GITHUB_REPO=https://github.com/AkashMainali/nextgen_ansible_advanced_homework.git
+JQ_REPO_BASE=http://www.opentlc.com/download/ansible_bootcamp
+REGION=us-east-1
+MAIL_ID=akash.mainali@axcelinno.io
+
