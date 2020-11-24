@@ -2,7 +2,9 @@
   gather_facts: false
   tasks:
   - name: OpenStack servers
-  - name: Curl website
+    os_auth:
+      cloud: "{{ openstack_cloud | default('openstack') }}"
+#  - name: Curl website
 
   - name: Fail if 'Ansible has done its job' is not in the page content
     fail:

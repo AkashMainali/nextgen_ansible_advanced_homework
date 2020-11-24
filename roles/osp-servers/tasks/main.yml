@@ -27,14 +27,15 @@
 
 #- name: Sleep to allow tower projects to update
 #  pause:
-#    seconds: 60
+#   seconds: 60
 
 - name: Add floating IP to instances
   os_floating_ip:
     cloud: openstack
     state: present
     reuse: yes
-    server: "{{ __instance.__openstack_server.name }}"
+    server: app1
+#    server: "{{ __instance.__openstack_server.name }}"
     network: ext_network
     wait: true
     timeout: 180
