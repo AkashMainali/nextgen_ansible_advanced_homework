@@ -41,4 +41,8 @@ job_template_name_3tier_app_aws: "09_3 tier app on Prod"
 aws_cred_name: "Creds for AWS instances"
 job_template_smoke_aws: "10_Smoke test Prod env"
 aws_smoke_app_playbook: site-smoketest-aws.yml
-
+opentlc_login: akash.mainali-axcelinno.io
+opentlc_password: Deathmagnet1!
+param_repo_base: http://www.opentlc.com/download/ansible_bootcamp
+tower_GUID: 9159
+path_to_opentlc_key: /root/.ssh/9159key.pem
