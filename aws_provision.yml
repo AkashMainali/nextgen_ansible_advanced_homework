@@ -1,7 +1,8 @@
 ---
 - hosts: localhost
   become: true
-  become_user: true
+  become_method: sudo
+  become_user: root
   gather_facts: false
   vars:
    param_repo_base: "http://www.opentlc.com/download/ansible_bootcamp"
