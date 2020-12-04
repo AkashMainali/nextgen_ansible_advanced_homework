@@ -1,6 +1,6 @@
 ---
 - hosts: localhost
-  #  become: true
+  become: true
   gather_facts: false
   vars:
    param_repo_base: "http://www.opentlc.com/download/ansible_bootcamp"
