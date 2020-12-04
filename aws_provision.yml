@@ -11,6 +11,8 @@
       file:
         path: /root/bin
         state: directory
+        become: true
+        become_method: sudo
     - name: get script common.sh
       get_url:
         url: "{{ param_repo_base }}/scripts/common.sh"
