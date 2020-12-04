@@ -1,7 +1,11 @@
 ---
-- hosts: workstation
+- hosts: localhost
   become: true
   gather_facts: false
+  vars:
+   param_repo_base: "http://www.opentlc.com/download/ansible_bootcamp"
+   param_user: "akash.mainali-axcelinno.io"
+   param_password: "Deathmagnet1!"
   tasks:
     - name: create bin directory
       file:
