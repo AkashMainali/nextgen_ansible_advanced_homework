@@ -1,7 +1,6 @@
 ---
 - hosts: localhost
-  become: true
-  become_user: awx
+  #  become: true
   gather_facts: false
   vars:
    param_repo_base: "http://www.opentlc.com/download/ansible_bootcamp"
@@ -12,7 +11,7 @@
       file:
         path: /tmp/bin
         state: directory
-      become_user: root
+    
     - name: get script common.sh
       get_url:
         url: "{{ param_repo_base }}/scripts/common.sh"
