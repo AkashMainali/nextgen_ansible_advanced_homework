@@ -1,2 +1,43 @@
 ---
 # vars file for roles/osp-instance-delete
+openstack_servers:
+-   name: frontend
+    state: present
+    image: rhel-guest
+    key_name: ansible_ssh
+    flavor: m1.medium
+    security_group_name: frontend
+    group: frontends
+    deployment: QA
+    meta:
+      - { group: frontends, deployment_name: QA}
+-   name: app1
+    state: present
+    image: rhel-guest
+    key_name: ansible_ssh
+    flavor: m1.medium
+    security_group_name: apps
+    group: apps
+    deployment: QA
+    meta:
+      - { group: apps, deployment_name: QA}
+-   name: app2
+    state: present
+    image: rhel-guest
+    key_name: ansible_ssh
+    flavor: m1.medium
+    security_group_name: apps
+    group: apps
+    deployment: QA
+    meta:
+      - { group: apps, deployment_name: QA}
+-   name: db
+    state: present
+    image: rhel-guest
+    key_name: ansible_ssh
+    flavor: m1.medium
+    security_group_name: db
+    group: apps
+    deployment: QA
+    meta:
+      - { group: appdbs, deployment_name: QA}
