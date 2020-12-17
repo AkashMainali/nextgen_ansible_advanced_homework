@@ -50,7 +50,7 @@
       shell: source /root/credential.rc; ./order_svc.sh -y -c 'OPENTLC Automation' -i 'Ansible Advanced - Three Tier App' -t 1 -d 'dialog_expiration=7;region=na;nodes=1;dialog_runtime=8;notes=Training - as part of course'
       args:
         chdir: /tmp
-      become: true
+      become_user: root
     - name: Wait for mail
       pause:
         minutes: 10 
