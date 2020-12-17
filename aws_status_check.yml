@@ -2,6 +2,7 @@
   gather_facts: false
   tasks:
   - name: Check the instances status
+    ping:
     wait_for:
       host: "{{ item }}"
       port: 22
