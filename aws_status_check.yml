@@ -3,5 +3,5 @@
   become_user: ec2-user
   tasks:
   - name: Check the instances status
-    ping:
+    ec2_instance_info:
         
