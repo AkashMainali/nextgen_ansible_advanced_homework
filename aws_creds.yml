@@ -2,8 +2,8 @@
 - hosts: localhost
   gather_facts: true
   remote_user: root
-  become: true
   become_method: sudo
+  
   tasks:
   - name: Install required packages 
     yum: 
@@ -14,6 +14,7 @@
       - python-pip 
       - python-devel 
       - gcc
+  
   - name: Install tower-cli
     pip:
      name: ansible-tower-cli
@@ -22,6 +23,7 @@
   - name: List key files
     shell: (cd /root/.ssh; find . -maxdepth 1 -type f -iname '*key.pem')| cut -d'/' -f2
     register: file_to_copy
+  
   - set_fact:
      tower_guid: "{{ lookup('env','TOWER_GUID')}}"
 
@@ -37,6 +39,7 @@
       tower_verify_ssl: no
       ssh_key_data: "/root/.ssh/{{ file_to_copy.stdout }}"
       username: ec2-user
+  
   - name: Update Prod Job template
     tower_job_template:
       name: "09_3 tier app on Prod"
@@ -49,6 +52,7 @@
       job_type: run
       playbook: site-3tier-app.yml
       project: "00_Homework Assignment"
+  
   - name: Update Prod Smoke Job template
     tower_job_template:
       name: "10_Smoke test Prod env"
