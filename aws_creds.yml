@@ -1,20 +1,28 @@
 #- hosts: tag_AnsibleGroup_bastions
 - hosts: localhost
   gather_facts: true
-#  become_user: akash.mainali-axcelinno.io
+  remote_user: root
 #  become_method: sudo
   
   tasks:
-  - name: Install required packages 
-    yum: 
-     name: "{{item}}"
-     state: latest 
-    loop: 
-      - python 
-      - python-pip 
-      - python-devel 
+#  - name: Install required packages 
+#    yum: 
+#     name: "{{item}}"
+#     state: latest 
+#    loop: 
+#      - python 
+#      - python-pip 
+#      - python-devel 
+#      - gcc
+#    become: true
+
+  - name: Install required package
+    shell: yum -y install "{{item}}"
+    loop:
+      - python
+      - python-pip
+      - python-devel
       - gcc
-    become: true
  
   - name: Install tower-cli
     pip:
