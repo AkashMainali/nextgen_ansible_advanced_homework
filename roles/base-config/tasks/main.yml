@@ -39,6 +39,4 @@
     baseurl: "http://192.168.0.5/repos/rhel-7-server-optional-rpms"
     gpgcheck: 0
     description: RHEL7 Optional repo
- 
-#- name: install base tools and packages
 
