@@ -1,7 +1,7 @@
 #- hosts: tag_AnsibleGroup_bastions
 - hosts: localhost
   gather_facts: true
-  become_user: devops
+  become_user: akash.mainali-axcelinno.io
   become_method: sudo
   
   tasks:
