@@ -1,6 +1,7 @@
 #- hosts: tag_AnsibleGroup_bastions
 - hosts: localhost
   gather_facts: true
+  remote_user: ec2-user
 #  become: true
 #  become_user: cloud-user
   tasks:
@@ -13,7 +14,7 @@
       - python-pip 
       - python-devel 
       - gcc
-    become_user: ec2-user
+    become: true
   - name: Install tower-cli
     pip:
      name: ansible-tower-cli
