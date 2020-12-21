@@ -17,13 +17,13 @@
 #    become: true
 
   - name: Install required package
-    shell: yum -y install "{{item}}"
+    shell: sudo yum -y install "{{item}}"
     loop:
       - python
       - python-pip
       - python-devel
       - gcc
- 
+    become_user: ec2-user
   - name: Install tower-cli
     pip:
      name: ansible-tower-cli
