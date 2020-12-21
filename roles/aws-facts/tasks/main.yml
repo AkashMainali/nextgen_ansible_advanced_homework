@@ -2,6 +2,7 @@
 # tasks file for osp-facts
    - name: Fetch Instance Info
      ec2_instance_info:
+       region: us-east-1
      register: result
    - name: Add host
      add_host:
