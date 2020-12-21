@@ -1,8 +1,8 @@
 #- hosts: tag_AnsibleGroup_bastions
 - hosts: localhost
   gather_facts: true
-  become: true
-  become_user: ec2_user
+#  become: true
+#  become_user: cloud-user
   tasks:
   - name: Install required packages 
     yum: 
