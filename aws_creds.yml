@@ -14,16 +14,17 @@
       - python-pip 
       - python-devel 
       - gcc
-#    become: true
   - name: Install tower-cli
     pip:
      name: ansible-tower-cli
      state: latest
-#    become: true
-#    become_user: devops
+  
   - name: List key files
     shell: (cd /root/.ssh; find . -maxdepth 1 -type f -iname '*key.pem')| cut -d'/' -f2
     register: file_to_copy
+  - set_fact:
+     tower_guid: "{{ lookup('env','TOWER_GUID')}}"
+
   - name: Tower Creds key file
     tower_credential:
       name: Creds for AWS instances
