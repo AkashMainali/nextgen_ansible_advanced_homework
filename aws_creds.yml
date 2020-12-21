@@ -3,7 +3,7 @@
   gather_facts: true
   remote_user: root
   become: true
-#  become_user: cloud-user
+  become_method: sudo
   tasks:
   - name: Install required packages 
     yum: 
