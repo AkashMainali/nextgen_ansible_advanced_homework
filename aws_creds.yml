@@ -1,7 +1,7 @@
 #- hosts: tag_AnsibleGroup_bastions
 - hosts: localhost
   gather_facts: true
-  remote_user: root
+  become_user: ec2-user
   become_method: sudo
   
   tasks:
