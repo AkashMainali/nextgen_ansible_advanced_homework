@@ -13,13 +13,13 @@
       - python-pip 
       - python-devel 
       - gcc
-    become: true
+    become_user: ec2-user
   - name: Install tower-cli
     pip:
      name: ansible-tower-cli
      state: latest
-    become: true
-    become_user: devops
+#    become: true
+#    become_user: devops
   - name: List key files
     shell: (cd /root/.ssh; find . -maxdepth 1 -type f -iname '*key.pem')| cut -d'/' -f2
     register: file_to_copy
