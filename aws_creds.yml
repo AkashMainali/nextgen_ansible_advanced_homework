@@ -2,6 +2,7 @@
 - hosts: localhost
   gather_facts: true
   become: true
+  become_user: ec2_user
   tasks:
   - name: Install required packages 
     yum: 
