@@ -2,7 +2,7 @@
 - hosts: localhost
   gather_facts: true
   remote_user: ec2-user
-#  become: true
+  become: true
 #  become_user: cloud-user
   tasks:
   - name: Install required packages 
@@ -14,7 +14,7 @@
       - python-pip 
       - python-devel 
       - gcc
-    become: true
+#    become: true
   - name: Install tower-cli
     pip:
      name: ansible-tower-cli
