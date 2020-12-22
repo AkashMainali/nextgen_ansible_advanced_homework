@@ -1,0 +1,13 @@
+---
+# handlers for database
+- name: restart_postgres
+  service:
+    name: "{{ postgres_service }}"
+    state: restarted
+
+# handler for loadbalancer
+- name: restart_haproxy
+  service:
+    name: haproxy
+    state: restarted
+
