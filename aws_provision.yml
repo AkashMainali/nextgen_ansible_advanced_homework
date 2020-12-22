@@ -1,6 +1,6 @@
 ---
 - hosts: localhost
-  #  become: true
+  become: true
   gather_facts: false
   vars:
    param_repo_base: "http://www.opentlc.com/download/ansible_bootcamp"
@@ -34,7 +34,7 @@
           export username={{ param_user }}
           export password={{ param_password }}
           export uri=https://labs.opentlc.com
-        dest: /tmp/credential.rc
+        dest: /tmp/aws-credential.rc
         mode: 0755
 
     # Fix the existing shell scripts to reference jq command with bin/jq
@@ -47,7 +47,7 @@
     # Using this script will always deploy environments in the us-east-1 region.
     # TODO: this shell task is not working yet!
     - name: order service on opentlc
-      shell: source /tmp/credential.rc; ./order_svc.sh -y -c 'OPENTLC Automation' -i 'Ansible Advanced - Three Tier App' -t 1 -d 'dialog_expiration=7;region=na;nodes=1;dialog_runtime=8;notes=Training - as part of course'
+      shell: source /tmp/aws-credential.rc; ./order_svc.sh -y -c 'OPENTLC Automation' -i 'Ansible Advanced - Three Tier App' -t 1 -d 'dialog_expiration=7;region=na;nodes=1;dialog_runtime=8;notes=Training - as part of course'
       args:
         chdir: /tmp
     
