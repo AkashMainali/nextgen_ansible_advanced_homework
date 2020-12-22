@@ -1,4 +1,30 @@
 ---
-- include: provision_database_tier.yml
-- include: provision_app_tier.yml
-- include: provision_load_balancer_tier.yml
+- name: Deploy, configure, and populate flask repo and virtualenv
+  hosts: app_servers
+  become: true
+  gather_facts: true
+  tags:
+    - application_servers
+    - flask
+  tasks:
+    - include: provision_app_tier.yml
+
+---
+- name: Deploy, configure, and populate Postgres 10
+  hosts: database_servers
+  become: true
+  gather_facts: true
+  tags:
+    - database_servers
+  tasks:
+    - include: provision_app_tier.yml
+
+---
+- name: Deploy haproxy load balancer
+  hosts: load_balancers
+  gather_facts: true 
+  become: true
+  tags:
+    - load_balancers
+  tasks:
+    - include: provision_load_balancer_tier.yml
