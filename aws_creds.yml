@@ -2,28 +2,27 @@
 - hosts: localhost
   gather_facts: true
   remote_user: root
-#  become_method: sudo
+  become: true
   
   tasks:
-#  - name: Install required packages 
-#    yum: 
-#     name: "{{item}}"
-#     state: latest 
-#    loop: 
-#      - python 
-#      - python-pip 
-#      - python-devel 
-#      - gcc
-#    become: true
+   - name: Install required packages 
+     yum: 
+      name: "{{item}}"
+      state: latest 
+     loop: 
+       - python 
+       - python-pip 
+       - python-devel 
+       - gcc
 
-  - name: Install required package
-    shell: sudo yum -y install "{{item}}"
-    loop:
-      - python
-      - python-pip
-      - python-devel
-      - gcc
-    become_user: ec2-user
+#  - name: Install required package
+#    shell: sudo yum -y install "{{item}}"
+#    loop:
+#      - python
+#      - python-pip
+#      - python-devel
+#      - gcc
+#    become_user: ec2-user
   - name: Install tower-cli
     pip:
      name: ansible-tower-cli
