@@ -1,7 +1,11 @@
-- hosts: all
+- hosts: localhost
   gather_facts: false
   become_user: ec2-user
   tasks:
-  - name: Check the instances status
-    ec2_instance_info:
+    - ec2_instance_facts:
+        region: us-east-1
+      delegate_to:  localhost
+    - name: Check the instances status
+      ec2_instance_info:
+        region: us-east-1
         
