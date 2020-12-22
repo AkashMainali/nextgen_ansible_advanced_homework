@@ -1,6 +1,6 @@
 ---
 - name: Deploy, configure, and populate Postgres 10
-  hosts: database_servers
+  hosts: appdbs
   become: true
   gather_facts: false
   tags:
@@ -108,7 +108,7 @@
         state: restarted
 
 - name: Deploy, configure, and populate flask repo and virtualenv
-  hosts: app_servers
+  hosts: apps
   become: true
   gather_facts: false
   tags:
@@ -214,7 +214,7 @@
         enabled: yes
 
 - name: Deploy haproxy load balancer
-  hosts: load_balancers
+  hosts: frontends
   gather_facts: false 
   become: true
 
