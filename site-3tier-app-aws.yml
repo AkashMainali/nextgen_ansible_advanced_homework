@@ -1,7 +1,7 @@
-#- hosts: localhost
-#  gather_facts: true
-#  roles:
-#  - name: aws-facts
+- hosts: localhost
+  gather_facts: true
+  roles:
+  - name: aws-facts
 
 # Setup front-end load balancer tier
 
