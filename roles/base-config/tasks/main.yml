@@ -44,7 +44,7 @@
     description: RHEL7 Optional repo
     enabled: yes
 
-- name: enable all RHSM repo
-  rhsm_repository:
-    name: rhel-7-server*
-    state: enabled
+#- name: enable all RHSM repo
+#  rhsm_repository:
+#    name: rhel-7-server*
+#    state: enabled
