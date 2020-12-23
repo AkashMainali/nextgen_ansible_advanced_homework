@@ -3,7 +3,6 @@
   yum:
     name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
     state: present
-    enablerepo: yes
 
 - name: Install basic packages
   package:
