@@ -5,7 +5,7 @@
     state: present
 
 - name: Install basic packages
-  package:
+  yum:
     name: ['vim','bash-completion','tmux','tree','htop','wget','unzip','curl','git']
     state: present
 
