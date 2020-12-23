@@ -12,33 +12,33 @@
   yum_repository:
     name: "Red Hat Enterprise Linux 7"
     baseurl: "http://192.168.0.5/repos/rhel-7-server-rpms"
-    gpgcheck: no
+    disable_gpg_check: yes
     description: RHEL7 Base repo
-#    enabled: yes
+    enablerepo: yes
 
 - name: enable common repos
   yum_repository:
     name: "Red Hat Enterprise Linux 7 Common"
     baseurl: "http://192.168.0.5/repos/rhel-7-server-rh-common-rpms"
-    gpgcheck: no
+    disable_gpg_check: yes
     description: RHEL7 Common repo
-#    enabled: yes
+    enablerepo: yes
 
 - name: enable extra repos
   yum_repository:
     name: "Red Hat Enterprise Linux 7 Extras"
     baseurl: "http://192.168.0.5/repos/rhel-7-server-extras-rpms"
-    gpgcheck: no
+    disable_gpg_check: yes
     description: RHEL7 Extra repo
-#    enabled: yes
+    enablerepo: yes
 
 - name: enable optional repos
   yum_repository:
     name: "Red Hat Enterprise Linux 7 Optional"
     baseurl: "http://192.168.0.5/repos/rhel-7-server-optional-rpms"
-    gpgcheck: no
+    disable_gpg_check: yes
     description: RHEL7 Optional repo
-#    enabled: yes
+    enablerepo: yes
 
 #- name: enable all RHSM repo
 #  rhsm_repository:
