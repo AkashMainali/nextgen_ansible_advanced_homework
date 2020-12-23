@@ -43,3 +43,8 @@
     gpgcheck: 0
     description: RHEL7 Optional repo
     enabled: yes
+
+- name: enable all RHSM repo
+  rhsm_repository:
+    name: '*'
+    state: enabled
