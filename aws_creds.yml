@@ -2,7 +2,7 @@
 - hosts: localhost
   gather_facts: true
   remote_user: devops
-#  become: true
+  become: true
   
   tasks:
    - name: Install required packages 
