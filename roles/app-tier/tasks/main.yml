@@ -4,10 +4,10 @@
     name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
     state: present
 
-- name: Install basic packages
-  yum:
-    name: ['vim','bash-completion','tmux','tree','htop','wget','unzip','curl','git']
-    state: present
+#- name: Install basic packages
+#  yum:
+#    name: ['vim','bash-completion','tmux','tree','htop','wget','unzip','curl','git']
+#    state: present
 
 - name: Install Java 8 CentOS
   yum:
