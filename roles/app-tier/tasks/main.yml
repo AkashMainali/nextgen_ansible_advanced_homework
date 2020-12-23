@@ -68,12 +68,13 @@
 #    state: started
 #    enabled: yes
 
-- name: Open tomcat port on the firewall
-  firewalld:
-    port: 8080/tcp
-    permanent: true
-    state: enabled
-    immediate: yes
+#- name: Open tomcat port on the firewall
+#  firewalld:
+#    port: 8080/tcp
+#    permanent: true
+#    state: enabled
+#    immediate: yes
+#  ansible_python_interpreter: /usr/bin/python3
 
 - name: Set UI access credentials
   template:
