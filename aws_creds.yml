@@ -1,7 +1,7 @@
 #- hosts: tag_AnsibleGroup_bastions
 - hosts: localhost
   gather_facts: true
-  remote_user: root
+  remote_user: devops
   become: true
   
   tasks:
