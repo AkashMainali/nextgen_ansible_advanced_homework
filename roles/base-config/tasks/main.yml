@@ -46,5 +46,10 @@
 
 - name: enable all RHSM repo
   rhsm_repository:
-    name: '*'
+    name: "{{items}}"
     state: enabled
+  with_item:
+   - Red Hat Enterprise Linux 7
+   - Red Hat Enterprise Linux 7 Common
+   - Red Hat Enterprise Linux 7 Extras
+   - Red Hat Enterprise Linux 7 Optional
