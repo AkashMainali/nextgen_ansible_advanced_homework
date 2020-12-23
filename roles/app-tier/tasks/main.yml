@@ -1,2 +1,6 @@
 ---
-
+- name: Deploy index.yml file
+  template:
+    src: index.html.j2
+    dest: "{{tomcat_web_root}}"
+  notify: restart tomcat

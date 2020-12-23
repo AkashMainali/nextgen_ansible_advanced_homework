@@ -4,4 +4,7 @@
   service:
     name: tomcat
     state: started
-
+- name: restart {{ payload }}
+  srvice:
+    name: tomcat
+    state: restarted
