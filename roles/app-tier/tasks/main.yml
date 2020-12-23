@@ -61,11 +61,12 @@
     state: started
     enabled: yes
 
-- name: Start and enable firewalld
-  service:
-    name: firewalld
-    state: started
-    enabled: yes
+#- name: Start and enable firewalld
+#  shell: systemctl restart firewalld
+#  service:
+#    name: firewalld
+#    state: started
+#    enabled: yes
 
 - name: Open tomcat port on the firewall
   firewalld:
