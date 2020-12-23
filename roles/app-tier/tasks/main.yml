@@ -1,4 +1,9 @@
 ---
+- name: install tomcat
+  yum:
+    name: tomcat
+    state: latest
+
 - name: Deploy index.yml file
   template:
     src: index.html.j2
